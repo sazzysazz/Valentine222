@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Login</title>
+<style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(45deg, #ff65a3, #ffbbca);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      width: 100%;
+    }
+
+    label {
+      color: #ff65a3;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      box-sizing: border-box;
+      border: 1px solid #ffbbca;
+      border-radius: 4px;
+      background-color: #fff8f9;
+    }
+
+    button {
+      background-color: #ff65a3;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #ffbbca;
+    }
+
+    /* Flower background */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://example.com/flower.png') repeat;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form action="main.html" method="post" onsubmit="return validateForm(event);">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    function main() {
+      window.open("/main.html");
+    }
+
+    function validateForm(event) {
+      var emailInput = document.getElementById("email").value;
+      var passwordInput = document.getElementById("password").value;
+
+      if (emailInput === "chaovisal567@gmail.com" && passwordInput === "12345") {
+        // Valid credentials, allow form submission
+        main();
+      } else {
+        // Invalid credentials, show alert and prevent form submission
+        alert("Please try again");
+        event.preventDefault(); // Prevents the default form submission
+        return false; // Returning false to prevent the form from submitting if the credentials are invalid
+      }
+    }
+  </script>
+
+</body>
+
+</html>
